@@ -16,5 +16,25 @@ namespace BuberBreakfast.Contract.Breakfast
         public DateTime LastModifiedDateTime { get; init; }
         public List<string> Savory { get; init; }
         public List<string> Sweet { get; init; }
+
+        public BreakfastResponse(
+            Guid id, 
+            string name, 
+            string description, 
+            DateTime startDateTime, 
+            DateTime endDateTime, 
+            DateTime lastModifiedDateTime, 
+            List<string> savory, 
+            List<string> sweet)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            StartDateTime = startDateTime;
+            EndDateTime = endDateTime;
+            LastModifiedDateTime = lastModifiedDateTime;
+            Savory = savory;
+            Sweet = sweet;
+        }
     }
 }
