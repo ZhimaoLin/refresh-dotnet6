@@ -32,6 +32,11 @@ namespace BuberBreakfast.Services.Breakfasts
 
         public ErrorOr<Deleted> DeleteBreakfast(Guid id)
         {
+            if (!_breakfasts.ContainsKey(id))
+            {
+                return Errors.Breakfast.NotFound;
+            }
+
             _breakfasts.Remove(id);
             return Result.Deleted;
         }   
