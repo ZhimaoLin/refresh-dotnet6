@@ -1,6 +1,7 @@
 # .NET 6 Refresher Project
 
-This is a refresher RESTful API project of .NET 6 using 
+This is a refresher RESTful API project using 
+- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) (Long Term Support)
 - CRUD REST API
 - [Domain Driven Desgin](https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design)
 - [Functional Programming](https://www.telerik.com/blogs/functional-programming-csharp-brief-consideration)
