@@ -1,0 +1,3 @@
+@id=60ccdf74-3b1e-45dd-86f6-ef999eae9d02
+
+DELETE https://localhost:32778/api/breakfasts/{{id}}
