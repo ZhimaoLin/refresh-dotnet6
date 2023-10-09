@@ -21,13 +21,7 @@ namespace BuberBreakfast.Controllers
         [HttpPost]
         public IActionResult CreateBreakfast(CreateBreakfastRequest request)
         {
-            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
-                request.Name,
-                request.Description,
-                request.StartDateTime,
-                request.EndDateTime,
-                request.Savory,
-                request.Sweet);
+            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.From(request);
 
             if (requestToBreakfastResult.IsError)
             {
@@ -62,14 +56,7 @@ namespace BuberBreakfast.Controllers
         [HttpPut("{id:Guid}")]
         public IActionResult UpsertBreakfast(Guid id, UpsertBreakfastRequest request)
         {
-            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
-                request.Name,
-                request.Description,
-                request.StartDateTime,
-                request.EndDateTime,
-                request.Savory,
-                request.Sweet,
-                id);
+            ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.From(id, request);
 
             if (requestToBreakfastResult.IsError)
             {
@@ -117,5 +104,7 @@ namespace BuberBreakfast.Controllers
                 routeValues: new { id = breakfast.Id },
                 value: MapBreakfastResponse(breakfast));
         }
+
+        
     }
 }
